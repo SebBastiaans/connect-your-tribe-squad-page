@@ -1,7 +1,21 @@
 {% render 'partials/head.liquid', title: 'Squad page' %}
 
-<h2>Students</h2>
-<ul>
+<ul class="filter">
+  <li>
+    Naam
+  </li>
+  <li>
+    Geboorte datum
+  </li>
+  <li>
+    Ronde hoek
+  </li>
+  <li>
+    <input type="search" placeholder="Search...">
+  </li>
+</ul>
+
+<ul class="students">
   {% for person in persons %}
     <li><a href="/student/{{ person.id }}">{{ person.name }}</a></li>
   {% endfor %}
