@@ -2,7 +2,7 @@
 
 <ul class="filter">
   <li>
-    Naam
+    Naam /* moet het als a of iets anders???*/
   </li>
   <li>
     Geboorte datum
@@ -17,7 +17,10 @@
 
 <ul class="students">
   {% for person in persons %}
-    <li><a href="/student/{{ person.id }}">{{ person.name }}</a></li>
+    <li>
+      <a href="/student/{{ person.id }}">{{ person.name }}</a>
+      <img src="{{ person.mugshot }}" alt="Mugshot van de student">
+    </li>
   {% endfor %}
 </ul>
 

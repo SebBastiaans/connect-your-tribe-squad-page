@@ -30,21 +30,36 @@ h1{
 .students{
     list-style: none;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 9.375rem), 1fr)); /* auto-fit maakt zoveel kolommen als passen in de container. 9.375rem is de vaste gewenste min breedte, 100% betekent dat de kolomn nooit breder dan de container mag zijn.*/
     row-gap: 1rem;
+    column-gap: 1rem;
     padding: 0;
 
     li{
-        width: 150px;
-        height: 150px;
+        width: 100%;
+        height: 5rem;
         background-color: white;
         
         a{
             text-decoration: none;
+            color: black;
         }
 
         &:nth-of-type(3n){
-            height: 267px;
+            background-color: green;
+        }
+
+        &:nth-of-type(4n + 1){
+            background-color:aqua ;
+        }
+
+        &:nth-of-type(7n + 2){
+            background-color: red;
+        }
+
+        &:hover{
+            scale: 1.1;
+            box-shadow:0 0 20px 5px white; /*kleur aanpassen naar fav kleur pp*/
         }
     }
 
