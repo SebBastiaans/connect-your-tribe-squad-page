@@ -62,7 +62,7 @@ app.get('/', async function (request, response) {
     // Combineer meerdere filters
     'filter[squads][squad_id][tribe][name]': 'FDND Jaar 1',
     // Filter eventueel alleen op een bepaalde squad
-    // 'filter[squads][squad_id][name]': '1I',
+    'filter[squads][squad_id][name]': '1I',
     // 'filter[squads][squad_id][name]': '1J',
     'filter[squads][squad_id][cohort]': '2526'
   }
@@ -86,7 +86,7 @@ app.get('/birthdate', async function (request, response) {
   // Haal alle personen uit de WHOIS API op, van dit jaar, gesorteerd op naam
   const params = {
     // Sorteer op naam
-    'sort': 'name',
+    'sort': 'birthdate',
 
     // Geef aan welke data je per persoon wil terugkrijgen
     'fields': '*,squads.*',
@@ -109,7 +109,7 @@ app.get('/birthdate', async function (request, response) {
 
   // Render index.liquid uit de views map en geef de opgehaalde data mee als variabele, genaamd persons
   // Geef ook de eerder opgehaalde squad data mee aan de view
-  response.render('birthdate.liquid', {persons: personResponseJSON.data, squads: squadResponseJSON.data})
+  response.render('index.liquid', {persons: personResponseJSON.data, squads: squadResponseJSON.data})
 })
 
 //!!!!!!!!!!! Linked naar border HHHHHHHHH
@@ -118,7 +118,7 @@ app.get('/border-radius', async function (request, response) {
   // Haal alle personen uit de WHOIS API op, van dit jaar, gesorteerd op naam
   const params = {
     // Sorteer op naam
-    'sort': 'name',
+    'sort': 'fav_border_radius',
 
     // Geef aan welke data je per persoon wil terugkrijgen
     'fields': '*,squads.*',
@@ -141,7 +141,7 @@ app.get('/border-radius', async function (request, response) {
 
   // Render index.liquid uit de views map en geef de opgehaalde data mee als variabele, genaamd persons
   // Geef ook de eerder opgehaalde squad data mee aan de view
-  response.render('border.liquid', {persons: personResponseJSON.data, squads: squadResponseJSON.data})
+  response.render('index.liquid', {persons: personResponseJSON.data, squads: squadResponseJSON.data})
 })
 
 // Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen

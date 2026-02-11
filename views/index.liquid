@@ -19,20 +19,25 @@
 
 <ul class="students">
   {% for person in persons %}
-    <li>
+    <li class="student-card" style="box-shadow:0 0 20px 5px {{ person.fav_color }}; border-radius: {{ person.fav_border_radius }}px"> 
       <a href="/student/{{ person.id }}">{{ person.name }}</a>
+      <a href="/student/{{ person.id }}">{{ person.birthdate | date: '%d-%m-%Y'}}</a>
+
       <img
         class="person-img"
         loading="lazy"
+        width="100"
         {% if person.mugshot %}
           src="{{'https://fdnd.directus.app/assets/' | append:  person.mugshot | append:'?width=300' }}"
         {% else %}
           src="{{ person.avatar }}"
         {% endif %}
-        alt=" {{ person.name }}"
+        alt="{{ person.name }}"
       >
+    
     </li>
   {% endfor %}
 </ul>
+
 
 {% render 'partials/foot.liquid', squads: squads %}
