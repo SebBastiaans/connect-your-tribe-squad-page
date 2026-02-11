@@ -1,11 +1,11 @@
-{% render 'partials/head.liquid', title: 'Squad page' %}
+{% render 'partials/headBirthdate.liquid', title: 'Squad page' %}
 
 <ul class="filter">
   <li>
     <a href="/">Naam</a>
   </li>
   <li>
-    <a href="/birthdate">Geboorte datum</a>
+    <a href="">Geboorte datum</a>
   </li>
   <li>
     <a href="/border-radius">Ronde hoek</a>
@@ -20,7 +20,7 @@
 <ul class="students">
   {% for person in persons %}
     <li>
-      <a href="/student/{{ person.id }}">{{ person.name }}</a>
+      <a href="/student/{{ person.id }}">{{ person.birthdate }}</a>
       <img
         class="person-img"
         loading="lazy"
@@ -29,7 +29,7 @@
         {% else %}
           src="{{ person.avatar }}"
         {% endif %}
-        alt=" {{ person.name }}"
+        alt=" {{ person.birthdate }}"
       >
     </li>
   {% endfor %}
