@@ -1,5 +1,5 @@
 body{
-    background-color: cadetblue;
+    background-image: url('/assets/beton.svg');
     font-family: sans-serif;
     margin: 0;
     margin-inline: 1rem;
@@ -19,6 +19,9 @@ h1{
     padding: 1rem;
     flex-direction: column;
     align-items: center;
+    border: 10px solid transparent;
+    border-image: url('/assets/photo-frame-border.svg') 40 round;
+
 
     input{
         appearance: none;
@@ -104,42 +107,50 @@ h1{
 .students{
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 9.375rem), 1fr)); /* auto-fit maakt zoveel kolommen als passen in de container. 9.375rem is de vaste gewenste min breedte, 100% betekent dat de kolomn nooit breder dan de container mag zijn.*/
-    row-gap: 1rem;
-    column-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 21rem), 1fr)); /* auto-fit maakt zoveel kolommen als passen in de container. 9.375rem is de vaste gewenste min breedte, 100% betekent dat de kolomn nooit breder dan de container mag zijn.*/
+    gap: 1rem;
     padding: 0;
+    align-items: start;
+    grid-auto-rows: min-content;
 
     .student-card{
-        width: 100%;
-        height: 5rem;
-        background-color: white;
         border: 10px solid transparent;
-        border-image: url('/assets/photo-frame-border.svg') 100 round;
+        border-image: url('/assets/photo-frame-border.svg') 40 round; /* thanks ai voor de custom border https://claude.ai/share/127da69f-f7b6-4971-8e62-bf07ac516b08*/
 
         animation: fade-in cubic-bezier(0.65, 0.05, 0.36, 1) forwards;
         animation-timeline: view();
         animation-range: entry 0% cover 20%;
-                
-        /* a{
-            text-decoration: none;
-            color: black;
+
+        div{
+            color: white;
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+            padding-inline: 1rem;
+            padding-block: .5rem;
+
+            a{
+                text-decoration: none;
+                color: white;
+
+                &:hover{
+                    scale: 1.1;
+                    text-decoration: underline;
+                }
+            }
+            
+            p{
+                margin: 0;
+            }
         }
-
-        &:nth-of-type(3n){
-            height: 10rem;
-        }
-
-        &:nth-of-type(4n + 1){
-            width: 200%;
-        }
-
-        &:nth-of-type(7n + 2){
-            width: 200%;
-            height: 10rem;
-        } */
-
-        &:hover{
-            scale: 1.1;
+        img{
+            width: 100%;
+            display: block;
+            height: auto;
         }
 
     }
