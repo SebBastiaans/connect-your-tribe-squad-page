@@ -108,7 +108,7 @@ app.get('/Z-A', async function (request, response) {
 
   // Render index.liquid uit de views map en geef de opgehaalde data mee als variabele, genaamd persons
   // Geef ook de eerder opgehaalde squad data mee aan de view
-  response.render('index.liquid', {persons: personResponseJSON.data, squads: squadResponseJSON.data})
+  response.render('naamZ-A.liquid', {persons: personResponseJSON.data, squads: squadResponseJSON.data})
 })
 
 //!!!!!!!!!!! Linked naar birthdate HHHHHHHHH
@@ -142,7 +142,7 @@ app.get('/birthdate', async function (request, response) {
 
   // Render index.liquid uit de views map en geef de opgehaalde data mee als variabele, genaamd persons
   // Geef ook de eerder opgehaalde squad data mee aan de view
-  response.render('index.liquid', {persons: personResponseJSON.data, squads: squadResponseJSON.data})
+  response.render('birthdate.liquid', {persons: personResponseJSON.data, squads: squadResponseJSON.data})
 })
 
 // //!!!!!!!!!!! Linked naar birthdate jong-oud HHHHHHHHH
@@ -176,7 +176,7 @@ app.get('/birthdate-jong-oud', async function (request, response) {
 
   // Render index.liquid uit de views map en geef de opgehaalde data mee als variabele, genaamd persons
   // Geef ook de eerder opgehaalde squad data mee aan de view
-  response.render('index.liquid', {persons: personResponseJSON.data, squads: squadResponseJSON.data})
+  response.render('birthdateRev.liquid', {persons: personResponseJSON.data, squads: squadResponseJSON.data})
 })
 
 //!!!!!!!!!!! Linked naar border HHHHHHHHH
@@ -210,7 +210,7 @@ app.get('/border-radius', async function (request, response) {
 
   // Render index.liquid uit de views map en geef de opgehaalde data mee als variabele, genaamd persons
   // Geef ook de eerder opgehaalde squad data mee aan de view
-  response.render('index.liquid', {persons: personResponseJSON.data, squads: squadResponseJSON.data})
+  response.render('border.liquid', {persons: personResponseJSON.data, squads: squadResponseJSON.data})
 })
 
 //!!!!!!!!!!! Linked naar border reverse HHHHHHHHH
@@ -243,7 +243,7 @@ app.get('/border-radius-groot-klein', async function (request, response) {
 
   // Render index.liquid uit de views map en geef de opgehaalde data mee als variabele, genaamd persons
   // Geef ook de eerder opgehaalde squad data mee aan de view
-  response.render('index.liquid', {persons: personResponseJSON.data, squads: squadResponseJSON.data})
+  response.render('borderRev.liquid', {persons: personResponseJSON.data, squads: squadResponseJSON.data})
 })
 
 // Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen
