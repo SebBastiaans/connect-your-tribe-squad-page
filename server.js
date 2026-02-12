@@ -80,7 +80,7 @@ app.get('/', async function (request, response) {
   response.render('index.liquid', {persons: personResponseJSON.data, squads: squadResponseJSON.data})
 })
 
-app.get('/', async function (request, response) {
+app.get('/Z-A', async function (request, response) {
 
   // Haal alle personen uit de WHOIS API op, van dit jaar, gesorteerd op naam
   const params = {
@@ -127,7 +127,9 @@ app.get('/birthdate', async function (request, response) {
     // Filter eventueel alleen op een bepaalde squad
     'filter[squads][squad_id][name]': '1I',
     // 'filter[squads][squad_id][name]': '1J',
-    'filter[squads][squad_id][cohort]': '2526'
+    'filter[squads][squad_id][cohort]': '2526',
+    'filter[birthdate][_nnull]':'true'
+
   }
   const personResponse = await fetch('https://fdnd.directus.app/items/person/?' + new URLSearchParams(params))
 
@@ -159,7 +161,9 @@ app.get('/birthdate-jong-oud', async function (request, response) {
     // Filter eventueel alleen op een bepaalde squad
     'filter[squads][squad_id][name]': '1I',
     // 'filter[squads][squad_id][name]': '1J',
-    'filter[squads][squad_id][cohort]': '2526'
+    'filter[squads][squad_id][cohort]': '2526',
+    'filter[birthdate][_nnull]':'true'
+
   }
   const personResponse = await fetch('https://fdnd.directus.app/items/person/?' + new URLSearchParams(params))
 
@@ -191,7 +195,9 @@ app.get('/border-radius', async function (request, response) {
     // Filter eventueel alleen op een bepaalde squad
     'filter[squads][squad_id][name]': '1I',
     // 'filter[squads][squad_id][name]': '1J',
-    'filter[squads][squad_id][cohort]': '2526'
+    'filter[squads][squad_id][cohort]': '2526',
+    'filter[fav_border_radius][_nnull]':'true'
+
   }
   const personResponse = await fetch('https://fdnd.directus.app/items/person/?' + new URLSearchParams(params))
 
@@ -223,7 +229,8 @@ app.get('/border-radius-groot-klein', async function (request, response) {
     // Filter eventueel alleen op een bepaalde squad
     'filter[squads][squad_id][name]': '1I',
     // 'filter[squads][squad_id][name]': '1J',
-    'filter[squads][squad_id][cohort]': '2526'
+    'filter[squads][squad_id][cohort]': '2526',
+    'filter[fav_border_radius][_nnull]':'true'
   }
   const personResponse = await fetch('https://fdnd.directus.app/items/person/?' + new URLSearchParams(params))
 
