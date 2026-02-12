@@ -23,15 +23,15 @@
 
 <ul class="students">
   {% for person in persons %}
-    <li class="student-card" style="background-color: {{ person.fav_color }}"> 
-      <a href="/student/{{ person.id }}">{{ person.name }}</a>
-      <a href="/student/{{ person.id }}">{{ person.birthdate | date: '%d-%m-%Y'}}</a>
+    <li class="student-card"> 
+      <div style="border-radius: {{ person.fav_border_radius }}px;background-color: {{ person.fav_color }}">
+      <a href="{{ person.profilecard }}">{{ person.name }}</a>
+      <p>{{ person.birthdate | date: '%d-%m-%Y'}}</p>
+      </div>
 
       <img
         class="person-img"
         loading="lazy"
-        width="100"
-        style="border-radius: {{ person.fav_border_radius }}px"
         {% if person.mugshot %}
           src="{{'https://fdnd.directus.app/assets/' | append:  person.mugshot | append:'?width=300' }}"
         {% else %}
